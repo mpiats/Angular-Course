@@ -1,0 +1,15 @@
+<p>
+  <!-- ./ means we stay on the same page, queryParams are added when you click on element -->
+  <a routerLink="./" [queryParams]="{order: order() === 'asc' ? 'desc' : 'asc'}">
+    Sort {{ order() === 'asc' ? 'Descending' :  'Ascending '}}
+  </a>
+</p>
+<ul>
+  @for (task of userTasks(); track task.id) {
+    <li>
+      <app-task [task]="task" />
+    </li>
+  } @empty {
+    <p>There are no tasks yet. Start adding some!</p>
+  }
+</ul>
