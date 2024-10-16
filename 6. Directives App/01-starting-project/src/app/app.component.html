@@ -1,0 +1,20 @@
+<main>
+  <app-learning-resources />
+
+  <hr />
+
+  <app-auth />
+
+  <!-- @if(isAdmin()){
+    <p>Only Admins should see!</p>
+  } -->
+  <!-- <p *ngIf="isAdmin()">Only Admins should see!</p> -->
+   <!-- * is sugar for ngtemplate, we usually use *ngIf, but you can put ngIf inside <ng-template>   (ng template for not showing elem initially) -->
+    <!-- <ng-template appAuth="admin"> 
+    <p >Only Admins should see!</p>
+   </ng-template> -->
+
+   <p *appAuth="'admin'" class="protected-content admin">Only Admins should see!</p>
+   <p *appAuth="'user'" class="protected-content unauthenticated">Users can see!</p>
+   <p *appAuth="'guest'" class="protected-content authenticated">Guest can see!</p>
+</main>
