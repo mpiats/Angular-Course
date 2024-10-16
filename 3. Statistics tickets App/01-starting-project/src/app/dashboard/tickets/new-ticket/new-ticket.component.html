@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" #form>
+  <app-control class="control" label="Title">
+    <input name="title" id="title" #titleInput #input [(ngModel)]="enteredText"/><!-- that pases to ng control in app control -->
+    <!-- you can declare template element with# (thats angular stuff) and use it all over template !!! type of # variable depends where you put it-->
+  </app-control>
+  <!-- <p>
+    <label>Title</label>
+    <input name="title" id="title" /> was like that
+  </p> -->
+  <app-control label="Request">
+    <textarea name="request" id="request" rows="3" #textInput #input [(ngModel)]="enteredTitle"></textarea>
+  </app-control>
+  <p>
+    <!-- <button appButton>
+      Submit
+      <span ngProjectAs="icon">⌲</span>
+    </button> -->
+    <button appButton>
+      Submit
+      <span class="icon">⌲</span>
+    </button>
+  </p>
+</form>

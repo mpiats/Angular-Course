@@ -1,0 +1,18 @@
+<div>
+  <ul>
+    @for (ticket of tickets; track ticket.id){
+      <li>
+        <app-ticket [data]="ticket" (close) ="onCloseTicket(ticket.id)">
+
+        </app-ticket>
+        <!-- </app-ticket> - {{$first}} true if it's first element also availbe last, event count -->
+      </li>
+    } @empty {
+      <p>No tickets avaible.</p>
+    }
+  </ul>
+</div>
+
+<div id="new-ticket">
+  <app-new-ticket (add)="onAdd($event)"></app-new-ticket>
+</div>

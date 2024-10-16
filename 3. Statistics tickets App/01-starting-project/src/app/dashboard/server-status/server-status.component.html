@@ -1,0 +1,23 @@
+<!-- <div [class.status]="currentStatus === 'online'"> here class "status will be applied in case starement is 'true'"-->
+<!--below we add list of classes, key can be field or string -->
+<div [class]="{ 
+    status: true,
+    'status-online' : currentStatus() === 'online',
+    'status-offline' : currentStatus() === 'offline',
+    'status-unknown' : currentStatus() === 'unknown',
+}">
+<!--  [style]="{ also can add like that
+    fontSize: '64px'
+}"> -->
+<!-- [style.fontSize] = "size" or "'64px'" -->
+  @if (currentStatus() === 'online') {
+  <p>Servers are online</p>
+  <p>All systems are operational.</p>
+  } @else if (currentStatus() === 'offline') {
+  <p>Servers are offline</p>
+  <p>Functionality should be restored soon.</p>
+  } @else {
+  <p>Server status is unknown</p>
+  <p>Fetching server status failed.</p>
+  }
+</div>
